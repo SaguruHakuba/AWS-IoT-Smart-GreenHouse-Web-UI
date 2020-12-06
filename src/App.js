@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import { connect } from "react-redux";
+
 import Helmet from 'react-helmet';
 
 import DateFnsUtils from "@date-io/date-fns";
@@ -15,8 +16,8 @@ function App({ theme }) {
   return (
     <React.Fragment>
       <Helmet
-        titleTemplate="%s | Material App"
-        defaultTitle="Material App - React Admin & Dashboard Template"
+        titleTemplate="%s | Smart Greenhouse App"
+        defaultTitle="Smart Greenhouse App - React Admin & Dashboard Template"
       />
       <StylesProvider injectFirst>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -31,4 +32,4 @@ function App({ theme }) {
   );
 }
 
-export default App;
+export default connect(store => ({ theme: store.themeReducer }))(App);

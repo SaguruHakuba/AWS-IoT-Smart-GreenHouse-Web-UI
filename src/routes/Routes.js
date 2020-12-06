@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { dashboardLayoutRoutes} from "./index";
+import { dashboardLayoutRoutes, authLayoutRoutes } from "./index";
 
 import DashboardLayout from "../layouts/Dashboard";
+import AuthLayout from "../layouts/Auth";
+import Page404 from "../pages/auth/Page404";
 
 const childRoutes = (Layout, routes) =>
   routes.map(({ children, path, component: Component }, index) =>
@@ -36,11 +38,19 @@ const childRoutes = (Layout, routes) =>
   );
 
 const Routes = () => (
-    <Router>
-      <Switch>
-        {childRoutes(DashboardLayout, dashboardLayoutRoutes)}
-      </Switch>
-    </Router>
-  );
-  
-  export default Routes;
+  <Router>
+    <Switch>
+      {childRoutes(DashboardLayout, dashboardLayoutRoutes)}
+      {childRoutes(AuthLayout, authLayoutRoutes)}
+      <Route
+        render={() => (
+          <AuthLayout>
+            <Page404 />
+          </AuthLayout>
+        )}
+      />
+    </Switch>
+  </Router>
+);
+
+export default Routes;

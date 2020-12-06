@@ -6,6 +6,7 @@ import { NavLink as RouterNavLink, withRouter } from "react-router-dom";
 import { darken } from "polished";
 
 import PerfectScrollbar from "react-perfect-scrollbar";
+import "../vendor/perfect-scrollbar.css";
 
 import { spacing } from "@material-ui/system";
 
@@ -312,7 +313,7 @@ function Sidebar({ classes, staticContext, location, ...rest }) {
   return (
     <Drawer variant="permanent" {...rest}>
       <Brand>
-        <BrandIcon /> <Box ml={1}>Material App <BrandChip label="PRO" /></Box> 
+        <BrandIcon /> <Box ml={1}>Smart Greenhouse </Box> 
       </Brand>
       <Scrollbar>
         <List disablePadding>
@@ -367,6 +368,30 @@ function Sidebar({ classes, staticContext, location, ...rest }) {
           </Items>
         </List>
       </Scrollbar>
+      <SidebarFooter>
+        <Grid container spacing={2}>
+          <Grid item>
+            <StyledBadge
+              overlap="circle"
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+              variant="dot"
+            >
+              <Avatar alt="Scott Cai" src="/static/img/avatars/avatar-1.jpg" />
+            </StyledBadge>
+          </Grid>
+          <Grid item>
+            <SidebarFooterText variant="body2">
+              Scott Cai
+            </SidebarFooterText>
+            <SidebarFooterSubText variant="caption">
+              Software Engineer
+            </SidebarFooterSubText>
+          </Grid>
+        </Grid>
+      </SidebarFooter>
     </Drawer>
   );
 }
