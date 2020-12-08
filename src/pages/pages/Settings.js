@@ -60,7 +60,7 @@ function Public() {
 
         <Grid container spacing={6}>
           <Grid item md={8}>
-            <TextField id="username" label="Username" defaultValue="lucylavender" variant="outlined" fullWidth my={2} />
+            <TextField id="username" label="Username" defaultValue="scottcai" variant="outlined" fullWidth my={2} />
 
             <FormControl fullWidth my={2} variant="outlined">
               <TextField
@@ -70,7 +70,7 @@ function Public() {
                 rows={3}
                 rowsMax={4}
                 variant="outlined"
-                defaultValue="Lucy is a Freelance Writer and Social Media Manager who helps finance professionals and Fin-tech startups build an audience and get more paying clients online."
+                defaultValue="Scott is a software engineer, currently working on an IoT project on RHIT greenhouse for Microchip."
               />
             </FormControl>
           </Grid>
@@ -119,14 +119,14 @@ function Private() {
 
         <Grid container spacing={6}>
           <Grid item md={6}>
-            <TextField id="first-name" label="First name" variant="outlined" defaultValue="Lucy" fullWidth my={2} />
+            <TextField id="first-name" label="First name" variant="outlined" defaultValue="Scott" fullWidth my={2} />
           </Grid>
           <Grid item md={6}>
-            <TextField id="last-name" label="Last name" variant="outlined" defaultValue="Lavender" fullWidth my={2} />
+            <TextField id="last-name" label="Last name" variant="outlined" defaultValue="Cai" fullWidth my={2} />
           </Grid>
         </Grid>
 
-        <TextField id="email" label="Email" variant="outlined" type="email" defaultValue="lucylavender@gmail.com" fullWidth my={2} />
+        <TextField id="email" label="Email" variant="outlined" type="email" defaultValue="sc.scott.cai@gmail.com" fullWidth my={2} />
 
         <TextField id="address" label="Address" variant="outlined" fullWidth my={2} />
 

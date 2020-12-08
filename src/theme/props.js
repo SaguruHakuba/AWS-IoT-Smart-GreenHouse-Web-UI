@@ -1,6 +1,6 @@
 const props = {
   MuiButtonBase: {
-    disableRipple: true
+    disableRipple: false
   },
   MuiCardHeader: {
     titleTypographyProps: { variant: "h6" }

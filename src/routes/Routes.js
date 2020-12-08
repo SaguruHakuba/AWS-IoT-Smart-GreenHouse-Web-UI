@@ -44,9 +44,10 @@ const Routes = () => (
       {childRoutes(AuthLayout, authLayoutRoutes)}
       <Route
         render={() => (
-          <AuthLayout>
-            <Page404 />
-          </AuthLayout>
+          // <AuthLayout>
+          //   <Page404 />
+          // </AuthLayout>
+          <DashboardLayout></DashboardLayout>
         )}
       />
     </Switch>

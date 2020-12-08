@@ -124,10 +124,10 @@ function Details() {
         <Spacer mb={4} />
 
         <Centered>
-          <Avatar alt="Lucy Lavender" src="/static/img/avatars/avatar-1.jpg" />
+          <Avatar alt="Scott Cai" src="/static/img/avatars/avatar-1.jpg" />
           <Typography variant="body2" component="div" gutterBottom>
-            <Box fontWeight="fontWeightMedium">Lucy Lavender</Box>
-            <Box fontWeight="fontWeightRegular">Lead Developer</Box>
+            <Box fontWeight="fontWeightMedium">Scott Cai</Box>
+            <Box fontWeight="fontWeightRegular">Lead Software Engineer</Box>
           </Typography>
 
           <Button mr={2} variant="contained" size="small">
@@ -234,7 +234,7 @@ function Elsewhere() {
             </AboutIcon>
           </Grid>
           <Grid item>
-            <Link href="https://material-app.bootlab.io/">lucylavender.io</Link>
+            <Link href="https://material-app.bootlab.io/">Github</Link>
           </Grid>
         </Grid>
         <Grid container direction="row" alignItems="center" mb={2}>

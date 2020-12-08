@@ -61,7 +61,7 @@ const Spacer = styled.div(spacing);
 let Demos = function({dispatch}) {
   return (
     <Wrapper>
-      <Heading>Select a demo</Heading>
+      {/* <Heading>Select a demo</Heading>
       <Demo my={2} mx={4} onClick={() => dispatch(setTheme(0))}>
         <Screenshot alt="Dark" src="/static/img/screenshots/dark-small.png" />
         <Typography variant="subtitle1" gutterBottom>
@@ -119,7 +119,7 @@ let Demos = function({dispatch}) {
         >
           Purchase Now
         </Button>
-      </Spacer>
+      </Spacer> */}
     </Wrapper>
   )
 }
