@@ -5,7 +5,6 @@ import async from "../components/Async";
 import {
   BookOpen,
   Briefcase,
-  Calendar as CalendarIcon,
   CheckSquare,
   CreditCard,
   Grid,
@@ -22,9 +21,6 @@ import {
 } from "react-feather";
 
 // Auth components
-const SignIn = async(() => import("../pages/auth/SignIn"));
-const SignUp = async(() => import("../pages/auth/SignUp"));
-const ResetPassword = async(() => import("../pages/auth/ResetPassword"));
 const Page404 = async(() => import("../pages/auth/Page404"));
 const Page500 = async(() => import("../pages/auth/Page500"));
 
@@ -65,7 +61,6 @@ const Blank = async(() => import("../pages/pages/Blank"));
 const Profile = async(() => import("../pages/pages/Profile"));
 const Tasks = async(() => import("../pages/pages/Tasks"));
 const Sensors = async(() => import("../pages/pages/Projects"));
-const Calendar = async(() => import("../pages/pages/Calendar"));
 const Settings = async(() => import("../pages/pages/Settings"));
 
 // Tables components
@@ -141,34 +136,11 @@ const tasksRoutes = {
   children: null
 };
 
-const calendarRoutes = {
-  id: "Calendar",
-  path: "/calendar",
-  icon: <CalendarIcon />,
-  component: Calendar,
-  children: null
-};
-
 const authRoutes = {
   id: "Auth",
   path: "/auth",
   icon: <Users />,
   children: [
-    {
-      path: "/auth/sign-in",
-      name: "Sign In",
-      component: SignIn
-    },
-    {
-      path: "/auth/sign-up",
-      name: "Sign Up",
-      component: SignUp
-    },
-    {
-      path: "/auth/reset-password",
-      name: "Reset Password",
-      component: ResetPassword
-    },
     {
       path: "/auth/404",
       name: "404 Page",
@@ -369,7 +341,6 @@ export const dashboardLayoutRoutes = [
   dashboardsRoutes,
   pagesRoutes,
   tasksRoutes,
-  calendarRoutes,
   sensorsRoutes,
   profileRoutes,
   settingRoutes,
@@ -391,7 +362,6 @@ export const sidebarRoutes = [
   pagesRoutes,
   sensorsRoutes,
   tasksRoutes,
-  calendarRoutes,
   profileRoutes,
   settingRoutes,
   authRoutes,

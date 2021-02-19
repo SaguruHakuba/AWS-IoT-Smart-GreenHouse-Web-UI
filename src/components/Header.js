@@ -3,8 +3,9 @@ import styled, { withTheme } from "styled-components";
 import { connect } from "react-redux";
 import { darken } from "polished";
 
+import { spacing } from "@material-ui/system";
+
 import {
-  Badge,
   Grid,
   Hidden,
   InputBase,
@@ -12,17 +13,13 @@ import {
   MenuItem,
   AppBar as MuiAppBar,
   IconButton as MuiIconButton,
+  Box as MuiBox,
   Toolbar
 } from "@material-ui/core";
 
 import { Menu as MenuIcon } from "@material-ui/icons";
 
-import {
-  Bell,
-  MessageSquare,
-  Search as SearchIcon,
-  Power
-} from "react-feather";
+const Box = styled(MuiBox)(spacing);
 
 const AppBar = styled(MuiAppBar)`
   background: ${props => props.theme.header.background};
@@ -34,13 +31,6 @@ const IconButton = styled(MuiIconButton)`
   svg {
     width: 22px;
     height: 22px;
-  }
-`;
-
-const Indicator = styled(Badge)`
-  .MuiBadge-badge {
-    background: ${props => props.theme.header.indicator.background};
-    color: ${props => props.theme.palette.common.white};
   }
 `;
 
@@ -139,44 +129,6 @@ function LanguageMenu() {
   )
 }
 
-function UserMenu() {
-  const [anchorMenu, setAnchorMenu] = useState(null);
-
-  const toggleMenu = event => {
-    setAnchorMenu(event.currentTarget);
-  };
-
-  const closeMenu = () => {
-    setAnchorMenu(null);
-  };
-
-  return (
-    <React.Fragment>
-      <IconButton
-        aria-owns={Boolean(anchorMenu) ? "menu-appbar" : undefined}
-        aria-haspopup="true"
-        onClick={toggleMenu}
-        color="inherit"
-      >
-        <Power />
-      </IconButton>
-      <Menu
-        id="menu-appbar"
-        anchorEl={anchorMenu}
-        open={Boolean(anchorMenu)}
-        onClose={closeMenu}
-      >
-        <MenuItem onClick={closeMenu}>
-          Profile
-        </MenuItem>
-        <MenuItem onClick={closeMenu}>
-          Sign out
-        </MenuItem>
-      </Menu>
-    </React.Fragment>
-  );
-}
-
 const Header = ({ onDrawerToggle }) => (
   <React.Fragment>
     <AppBar position="sticky" elevation={0}>
@@ -194,27 +146,11 @@ const Header = ({ onDrawerToggle }) => (
             </Grid>
           </Hidden>
           <Grid item>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <Input placeholder="Search topics" />
-            </Search>
+            <Box ml={8}>AWS Greenhouse IoT System </Box> 
           </Grid>
           <Grid item xs />
           <Grid item>
-            <IconButton color="inherit">
-              <Indicator badgeContent={3}>
-                <MessageSquare />
-              </Indicator>
-            </IconButton>
-            <IconButton color="inherit">
-              <Indicator badgeContent={7}>
-                <Bell />
-              </Indicator>
-            </IconButton>
             <LanguageMenu />
-            <UserMenu />
           </Grid>
         </Grid>
       </Toolbar>

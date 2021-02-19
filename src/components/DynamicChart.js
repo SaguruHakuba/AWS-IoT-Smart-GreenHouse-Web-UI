@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CanvasJSReact from '../assets/Canvajs/canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-var dps = [{x: 1, y: 20}];   //dataPoints.
+var dps = [{x: 1, y: null}];   //dataPoints.
 var xVal = dps.length + 1;
 var yVal = null;
 var boardId = null;
@@ -18,7 +18,7 @@ class DynamicLineChart extends Component {
 	}
 	updateChart() {
 
-		fetch('https://1w6w07injl.execute-api.us-east-2.amazonaws.com/dev/getmostrecenthumiditydatafromdb')
+		fetch('https://r0s3d5fz4k.execute-api.us-east-2.amazonaws.com/dev/getMostRecentTemperatureDatafromDB101')
 		.then((response) => response.json())
 		.then(
 			(res) => {
@@ -26,8 +26,9 @@ class DynamicLineChart extends Component {
 				if (res.body.Rows.length != 0) {
 					boardId = parseInt(res.body.Rows[0].Data[0].ScalarValue);
 					yVal = parseFloat(res.body.Rows[0].Data[2].ScalarValue);
+				} else {
+					yVal = null;
 				}
-				yVal = null;
 			},
 			(error) => {
 				yVal = null;
@@ -44,12 +45,15 @@ class DynamicLineChart extends Component {
 	render() {
 		const options = {
 			title :{
-				text: "Humidity 203"
+				text: "Temperature 101"
 			},
 			data: [{
 				type: "line",
 				dataPoints : dps
-			}]
+			}],
+			axisX:{
+				interval: 1,
+			},
 		}
 		
 		return (
