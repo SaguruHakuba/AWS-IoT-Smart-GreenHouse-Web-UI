@@ -5,6 +5,7 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 import Helmet from 'react-helmet';
 
 import "../../vendor/roundedBarCharts";
+import DynamicLineChart from "../components/DynamicChart";
 import { Bar } from "react-chartjs-2";
 
 import { red, green, blue } from "@material-ui/core/colors";
@@ -535,7 +536,7 @@ const SalesRevenue = withTheme(({ theme }) => {
   );
 });
 
-function Profile() {
+function Temperature() {
   return (
     <React.Fragment>
       <Helmet title="Profile" />
@@ -564,7 +565,7 @@ function Profile() {
           <Elsewhere />
         </Grid>
         <Grid item xs={12} lg={8} xl={9}>
-          <SalesRevenue />
+          <DynamicLineChart title="Temperature sensor 101" uri='https://r0s3d5fz4k.execute-api.us-east-2.amazonaws.com/dev/getMostRecentTemperatureDatafromDB101'/>
           <Grid container spacing={6}>
             <Grid item xs={12} lg={4}>
               <Earnings />
@@ -583,4 +584,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Temperature;

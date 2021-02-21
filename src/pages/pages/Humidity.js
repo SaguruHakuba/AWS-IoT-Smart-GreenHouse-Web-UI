@@ -184,7 +184,7 @@ const demoTasks = [
   }
 ];
 
-function Tasks() {
+function Humidity() {
   const containers = [];
 
   const onContainerReady = container => {
@@ -199,7 +199,7 @@ function Tasks() {
     <React.Fragment>
       <Helmet title="Tasks" />
       <Typography variant="h3" gutterBottom display="inline">
-        Tasks
+        Humidity
       </Typography>
 
       <Breadcrumbs aria-label="Breadcrumb" mt={2}>
@@ -209,7 +209,7 @@ function Tasks() {
         <Link component={NavLink} exact to="/">
           Pages
         </Link>
-        <Typography>Tasks</Typography>
+        <Typography>Humidity</Typography>
       </Breadcrumbs>
 
       <Divider my={6} />
@@ -254,4 +254,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default Humidity;

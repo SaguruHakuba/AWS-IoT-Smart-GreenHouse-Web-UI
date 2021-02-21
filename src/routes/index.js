@@ -58,8 +58,8 @@ const FeatherIcons = async(() => import("../pages/icons/FeatherIcons"));
 
 // Pages components
 const Blank = async(() => import("../pages/pages/Blank"));
-const Profile = async(() => import("../pages/pages/Profile"));
-const Tasks = async(() => import("../pages/pages/Tasks"));
+const Temperature = async(() => import("../pages/pages/Temperature"));
+const Humidity = async(() => import("../pages/pages/Humidity"));
 const Sensors = async(() => import("../pages/pages/Projects"));
 const Settings = async(() => import("../pages/pages/Settings"));
 
@@ -102,11 +102,11 @@ const pagesRoutes = {
   children: null
 };
 
-const profileRoutes = {
-  id: "Profile",
-  path: "/profile",
+const temperatureRoutes = {
+  id: "Temperature",
+  path: "/temperature",
   icon: <User />,
-  component: Profile,
+  component: Temperature,
   children: null
 };
 
@@ -127,12 +127,12 @@ const settingRoutes = {
   children: null
 };
 
-const tasksRoutes = {
-  id: "Tasks",
-  path: "/tasks",
+const humidityRoutes = {
+  id: "Humidity",
+  path: "/humidity",
   icon: <CheckSquare />,
   badge: "17",
-  component: Tasks,
+  component: Humidity,
   children: null
 };
 
@@ -340,9 +340,9 @@ const privateRoutes = {
 export const dashboardLayoutRoutes = [
   dashboardsRoutes,
   pagesRoutes,
-  tasksRoutes,
+  humidityRoutes,
   sensorsRoutes,
-  profileRoutes,
+  temperatureRoutes,
   settingRoutes,
   componentsRoutes,
   chartRoutes,
@@ -361,8 +361,8 @@ export const sidebarRoutes = [
   dashboardsRoutes,
   pagesRoutes,
   sensorsRoutes,
-  tasksRoutes,
-  profileRoutes,
+  humidityRoutes,
+  temperatureRoutes,
   settingRoutes,
   authRoutes,
   componentsRoutes,

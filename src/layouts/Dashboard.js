@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Settings from "../components/Settings";
-import DynamicLineChart from "../components/DynamicChart";
+import DynamicLineChart from "../pages/components/DynamicChart";
 
 import { spacing } from "@material-ui/system";
 import {
@@ -101,7 +101,8 @@ const Dashboard = ({children, routes, width}) => {
       <AppContent>
         <Header onDrawerToggle={handleDrawerToggle} />
         <MainContent p={isWidthUp("lg", width) ? 10 : 5}>
-          {<DynamicLineChart/>} 
+          {children}
+          {/* {<DynamicLineChart/>}  */}
         </MainContent>
         
         <Footer />

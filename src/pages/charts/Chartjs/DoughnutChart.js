@@ -18,10 +18,10 @@ const ChartWrapper = styled.div`
 
 function DoughnutChart({ theme }) {
   const data = {
-    labels: ["Social", "Search Engines", "Direct", "Other"],
+    labels: ["Student Time Cost", "Technician Time Cost", "Engineer Time Cost", "Faculty Time Cost"],
     datasets: [
       {
-        data: [260, 125, 54, 146],
+        data: [16940, 750, 225, 225],
         backgroundColor: [
           theme.palette.secondary.main,
           orange[500],

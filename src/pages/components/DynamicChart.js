@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CanvasJSReact from '../assets/Canvajs/canvasjs.react';
+import CanvasJSReact from '../../assets/Canvajs/canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 var dps = [{x: 1, y: null}];   //dataPoints.
@@ -18,12 +18,12 @@ class DynamicLineChart extends Component {
 	}
 	updateChart() {
 
-		fetch('https://r0s3d5fz4k.execute-api.us-east-2.amazonaws.com/dev/getMostRecentTemperatureDatafromDB101')
+		fetch(this.props.uri)
 		.then((response) => response.json())
 		.then(
 			(res) => {
 				console.log(res);
-				if (res.body.Rows.length != 0) {
+				if (res.body != null && res.body.Rows.length != 0) {
 					boardId = parseInt(res.body.Rows[0].Data[0].ScalarValue);
 					yVal = parseFloat(res.body.Rows[0].Data[2].ScalarValue);
 				} else {
@@ -40,12 +40,14 @@ class DynamicLineChart extends Component {
 		if (dps.length >  10 ) {
 			dps.shift();
 		}
-		this.chart.render();
+		if (this.chart != null) {
+			this.chart.render();
+		}
 	}
 	render() {
 		const options = {
 			title :{
-				text: "Temperature 101"
+				text: this.props.title
 			},
 			data: [{
 				type: "line",
@@ -57,13 +59,15 @@ class DynamicLineChart extends Component {
 		}
 		
 		return (
-		<div>
-			<h1>React Dynamic Line Chart</h1>
-			<CanvasJSChart options = {options} 
-				onRef={ref => this.chart = ref}
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
+		<React.Fragment>
+			<div>
+				<h1>{this.props.title}</h1>
+				<CanvasJSChart options = {options} 
+					onRef={ref => this.chart = ref}
+				/>
+				{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+			</div>
+		</React.Fragment>
 		);
 	}
 }
