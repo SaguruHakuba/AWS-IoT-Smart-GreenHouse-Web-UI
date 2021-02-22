@@ -18,15 +18,15 @@ const ChartWrapper = styled.div`
 
 function PieChart({ theme }) {
   const data = {
-    labels: ["Social", "Search Engines", "Direct", "Other"],
+    labels: ["Sensors", "Power Chords", "Other"],
     datasets: [
       {
-        data: [260, 125, 54, 146],
+        data: [177.80, 174.22, 47.98],
         backgroundColor: [
           theme.palette.secondary.main,
           orange[500],
           red[500],
-          theme.palette.grey[300]
+          // theme.palette.grey[300]
         ],
         borderColor: "transparent"
       }

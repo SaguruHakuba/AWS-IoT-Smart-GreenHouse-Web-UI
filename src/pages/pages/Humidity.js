@@ -249,6 +249,17 @@ function Humidity() {
             <Task content={demoTasks[0]} avatars={[]} />
           </Lane>
         </Grid>
+        <Grid item xs={12} lg={4} xl={4}>
+          <Lane
+            title="Completed"
+            description="Aenean posuere, tortor sed cursus feugiat."
+            onContainerLoaded={onContainerReady}
+          >
+            <Task content={demoTasks[3]} avatars={[1, 2]} />
+            <Task content={demoTasks[2]} avatars={[4]} />
+            <Task content={demoTasks[0]} avatars={[]} />
+          </Lane>
+        </Grid>
       </Grid>
     </React.Fragment>
   );

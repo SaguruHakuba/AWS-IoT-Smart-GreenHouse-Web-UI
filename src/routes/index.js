@@ -61,7 +61,7 @@ const Blank = async(() => import("../pages/pages/Blank"));
 const Temperature = async(() => import("../pages/pages/Temperature"));
 const Humidity = async(() => import("../pages/pages/Humidity"));
 const Sensors = async(() => import("../pages/pages/Projects"));
-const Settings = async(() => import("../pages/pages/Settings"));
+const Pressure = async(() => import("../pages/pages/Pressure"));
 
 // Tables components
 const SimpleTable = async(() => import("../pages/tables/SimpleTable"));
@@ -119,11 +119,11 @@ const sensorsRoutes = {
   children: null
 };
 
-const settingRoutes = {
-  id: "Settings",
-  path: "/setting",
+const pressureRoutes = {
+  id: "Pressure",
+  path: "/pressure",
   icon: <CreditCard />,
-  component: Settings,
+  component: Pressure,
   children: null
 };
 
@@ -343,7 +343,7 @@ export const dashboardLayoutRoutes = [
   humidityRoutes,
   sensorsRoutes,
   temperatureRoutes,
-  settingRoutes,
+  pressureRoutes,
   componentsRoutes,
   chartRoutes,
   formsRoutes,
@@ -363,7 +363,7 @@ export const sidebarRoutes = [
   sensorsRoutes,
   humidityRoutes,
   temperatureRoutes,
-  settingRoutes,
+  pressureRoutes,
   authRoutes,
   componentsRoutes,
   chartRoutes,
