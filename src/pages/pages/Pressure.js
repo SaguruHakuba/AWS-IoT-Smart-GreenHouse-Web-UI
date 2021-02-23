@@ -25,16 +25,16 @@ const NavLink = React.forwardRef((props, ref) => (
 function Pressure() {
   return (
     <React.Fragment>
-      <Helmet title="Charts" />
+      <Helmet title="Pressure" />
       <Typography variant="h3" gutterBottom display="inline">
-        Charts
+        Pressure
       </Typography>
 
       <Breadcrumbs aria-label="Breadcrumb" mt={2}>
         <Link component={NavLink} exact to="/">
           Dashboard
         </Link>
-        <Typography>Charts</Typography>
+        <Typography>Pressure</Typography>
       </Breadcrumbs>
 
       <Divider my={6} />
